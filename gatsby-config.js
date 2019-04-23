@@ -1,16 +1,23 @@
+// GatsBy Config
+//https://www.gatsbyjs.org/docs/gatsby-config/
 var proxy = require("http-proxy-middleware")
 
 module.exports = {
+  //  reuse common pieces of data across the site
   siteMetadata: {
-    title: 'Gatsby + Netlify CMS Starter',
+    title: '江郎读书',
     description:
-      'This repo contains an example business website that is built with Gatsby, and Netlify CMS.It follows the JAMstack architecture by using Git as a single source of truth, and Netlify for continuous deployment, and CDN distribution.',
+      '校园 | 二手 | 图书 | 数码',
   },
+  // Node.js packages that implement Gatsby APIs
   plugins: [
+    //  lets you control your document head using their React component.
     'gatsby-plugin-react-helmet',
+    // Provides drop-in support for SASS/SCSS stylesheets
     'gatsby-plugin-sass',
     {
       // keep as first gatsby-source-filesystem plugin for gatsby image support
+      // sourcing data into your Gatsby application from your local filesystem.
       resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/static/img`,
@@ -31,9 +38,12 @@ module.exports = {
         name: 'images',
       },
     },
+    // It aims to provide excellent out-of-the box settings for processing common web image formats.
     'gatsby-plugin-sharp',
+    // ImageSharp 
     'gatsby-transformer-sharp',
     {
+      // Parses Markdown files using Remark
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
