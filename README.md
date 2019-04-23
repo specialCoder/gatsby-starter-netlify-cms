@@ -74,17 +74,17 @@ npm install --global --production windows-build-tools
 ## Purgecss
 This plugin uses [gatsby-plugin-purgecss](https://www.gatsbyjs.org/packages/gatsby-plugin-purgecss/) and [bulma](https://bulma.io/). The bulma builds are usually ~170K but reduced 90% by purgecss.
 
-# CONTRIBUTING
+## Render Order
+ + pages 
+ + 如果index是js文件
+    1. 直接渲染结果
+ + 如果index是markdown文件
+    1. index.md文件使用templaet下templateKey component
+    2. 加载markdown内容作为QL 
+    3. GraphQL查询 
+    4. 查询结果作为component props 进行渲染
 
+# CONTRIBUTING
 Contributions are always welcome, no matter how large or small. Before contributing,
 please read the [code of conduct](CODE_OF_CONDUCT.md).
 
-# Render Order
- + pages 
- + 如果index是js文件
-    - 直接渲染结果
- + 如果index是markdown文件
-    - index.md文件使用templaet下templateKey component
-    - 加载markdown内容作为QL 
-    - GraphQL查询 
-    - 查询结果作为component props 进行渲染
