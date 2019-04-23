@@ -78,3 +78,13 @@ This plugin uses [gatsby-plugin-purgecss](https://www.gatsbyjs.org/packages/gats
 
 Contributions are always welcome, no matter how large or small. Before contributing,
 please read the [code of conduct](CODE_OF_CONDUCT.md).
+
+# Render Order
+ + pages 
+ + 如果index是js文件
+    - 直接渲染结果
+ + 如果index是markdown文件
+    - index.md文件使用templaet下templateKey component
+    - 加载markdown内容作为QL 
+    - GraphQL查询 
+    - 查询结果作为component props 进行渲染
